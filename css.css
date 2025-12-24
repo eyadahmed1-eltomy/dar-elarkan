@@ -758,8 +758,8 @@ header.scrolled {
 /* Hero Stats */
 .hero-stats {
     position: absolute;
-    bottom: 5px;
-    left: 54.3%;
+    bottom: 15px;
+    left: 18.3%;
     transform: translateX(-50%);
     display: flex;
     gap: 60px;
@@ -1651,4 +1651,5 @@ header.scrolled {
     .badge-text {
         font-size: 0.75rem;
     }
+
 }

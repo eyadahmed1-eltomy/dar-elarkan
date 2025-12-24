@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dar El-Arkan | دار الأركان للتطوير العقاري</title>
+    <meta name="description" content="شركة دار الأركان المصرية للتطوير العقاري - نبني أحلامك بأعلى معايير الجودة">
+    <link rel="shortcut icon" href="logo_company1.jpg" type="image/x-icon">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Three.js for 3D -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="crane">
+                <div class="crane-arm"></div>
+                <div class="crane-hook"></div>
+                <div class="crane-cable"></div>
+            </div>
+            <div class="building-blocks">
+                <div class="block block-1"></div>
+                <div class="block block-2"></div>
+                <div class="block block-3"></div>
+            </div>
+            <p class="loader-text">جاري التحميل...</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <a href="index.html" class="logo">
+            <div class="logo-letters">
+                <span class="letter-d">D</span>
+                <span class="letter-a">A</span>
+                <span class="letter-r">R</span>
+            </div>
+            <div class="logo-text">
+                <span class="logo-main">EL ARKAN</span>
+                <span class="logo-sub">للتطوير العقاري</span>
+            </div>
+        </a>
+        
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">
+                        <span>مشاريعنا</span>
+                        <svg class="nav-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+                    </a>
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-item">منازل و فلل</a>
+                        <a href="#" class="dropdown-item">شقق</a>
+                        <a href="#" class="dropdown-item">منشآت أخرى</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="#about" class="nav-link">عن الشركة</a></li>
+                <li class="nav-item"><a href="#services" class="nav-link">خدماتنا</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">تواصل معنا</a></li>
+            </ul>
+        </nav>
+        
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <!-- Hero Section with 3D Building -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="title-line">نبني</span>
+                <span class="title-line highlight">أحلامك</span>
+                <span class="title-line">بإتقان</span>
+            </h1>
+            <p class="hero-subtitle">شركة دار الأركان للتطوير العقاري - نحول رؤيتك إلى واقع معماري استثنائي</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">
+                    <span>استكشف مشاريعنا</span>
+                    <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+                </a>
+                <a href="#contact" class="btn btn-secondary">تواصل معنا</a>
+            </div>
+        </div>
+        
+        <div class="hero-3d" id="hero3d"></div>
+        
+        <div class="hero-stats">
+            <div class="stat-item">
+                <span class="stat-number" data-target="150">0</span>
+                <span class="stat-label">مشروع منجز</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="25">0</span>
+                <span class="stat-label">سنة خبرة</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="500">0</span>
+                <span class="stat-label">عميل سعيد</span>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>اكتشف المزيد</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">من نحن</span>
+                <h2 class="section-title">مرحباً بكم في دار الأركان</h2>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text reveal-left">
+                    <p class="lead">
+                        <strong>دار الأركان</strong> هي الشركة الرائدة في مجال التطوير العقاري في مصر، 
+                        نقدم أفضل الحلول السكنية والتجارية بأعلى معايير الجودة والإبداع.
+                    </p>
+                    <p>
+                        نؤمن بأن كل مشروع هو قصة نجاح جديدة، ونسعى دائماً لتحقيق أحلام عملائنا 
+                        من خلال تصميمات معمارية مبتكرة وتنفيذ متقن يراعي أدق التفاصيل.
+                    </p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <div class="feature-icon">🏗️</div>
+                            <span>جودة عالية</span>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">📐</div>
+                            <span>تصميم مبتكر</span>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">⏰</div>
+                            <span>التزام بالمواعيد</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image reveal-right">
+                    <div class="image-card">
+                        <img src="logo_company2.jpg" alt="Dar El Arkan">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="experience-badge">
+                        <span class="badge-number">25+</span>
+                        <span class="badge-text">سنة خبرة</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">أعمالنا</span>
+                <h2 class="section-title">مشاريعنا المميزة</h2>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card reveal-up" data-tilt>
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="logo_company1.jpg" alt="Gardenia">
+                            <div class="card-overlay">
+                                <h3>GARDENIA</h3>
+                                <p>مجمع سكني فاخر</p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3>GARDENIA</h3>
+                            <p>مجمع سكني متكامل يضم فيلات وشقق فاخرة بتصميمات عصرية، محاط بمساحات خضراء واسعة ومرافق ترفيهية متنوعة.</p>
+                            <a href="#" class="card-btn">عرض التفاصيل</a>
+                        </div>
+                    </div>
+                    <div class="card-glow"></div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card reveal-up" data-tilt style="--delay: 0.1s">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="logo_company1.jpg" alt="Bayt El Watan">
+                            <div class="card-overlay">
+                                <h3>BAYT EL WATAN</h3>
+                                <p>مشروع سكني متميز</p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3>BAYT EL WATAN</h3>
+                            <p>مشروع سكني فريد يجمع بين الأصالة والحداثة، يوفر وحدات سكنية بمساحات متنوعة تناسب جميع الأسر.</p>
+                            <a href="#" class="card-btn">عرض التفاصيل</a>
+                        </div>
+                    </div>
+                    <div class="card-glow"></div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card reveal-up" data-tilt style="--delay: 0.2s">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="logo_company3.jpg" alt="New Project">
+                            <div class="card-overlay">
+                                <h3>SUNSET RESIDENCE</h3>
+                                <p>أبراج سكنية فاخرة</p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3>SUNSET RESIDENCE</h3>
+                            <p>أبراج سكنية شاهقة بإطلالات بانورامية خلابة، تقدم تجربة معيشة راقية مع كافة الخدمات والمرافق.</p>
+                            <a href="#" class="card-btn">عرض التفاصيل</a>
+                        </div>
+                    </div>
+                    <div class="card-glow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-header light">
+                <span class="section-tag">خدماتنا</span>
+                <h2 class="section-title">ماذا نقدم لكم</h2>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card reveal-up">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 3L2 12h3v9h6v-6h2v6h6v-9h3L12 3z"/></svg>
+                    </div>
+                    <h3>تطوير عقاري</h3>
+                    <p>نطور مشاريع سكنية وتجارية متكاملة بأعلى معايير الجودة</p>
+                </div>
+                
+                <div class="service-card reveal-up" style="--delay: 0.1s">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
+                    </div>
+                    <h3>بناء وتشييد</h3>
+                    <p>فريق متخصص في البناء والتشييد بأحدث التقنيات والمعدات</p>
+                </div>
+                
+                <div class="service-card reveal-up" style="--delay: 0.2s">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg>
+                    </div>
+                    <h3>استشارات عقارية</h3>
+                    <p>نقدم استشارات متخصصة لمساعدتك في اتخاذ القرار الأمثل</p>
+                </div>
+                
+                <div class="service-card reveal-up" style="--delay: 0.3s">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><path d="M20 6h-8l-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-6 10H6v-2h8v2zm4-4H6v-2h12v2z"/></svg>
+                    </div>
+                    <h3>إدارة المشاريع</h3>
+                    <p>إدارة احترافية لمشاريعك من البداية حتى التسليم</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="services-bg-element"></div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">تواصل</span>
+                <h2 class="section-title">تواصل معنا</h2>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info reveal-left">
+                    <div class="info-card">
+                        <div class="info-icon">📍</div>
+                        <div class="info-text">
+                            <h4>العنوان</h4>
+                            <p>القاهرة، مصر</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">📞</div>
+                        <div class="info-text">
+                            <h4>الهاتف</h4>
+                            <p dir="ltr">+20 123 456 7890</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">✉️</div>
+                        <div class="info-text">
+                            <h4>البريد الإلكتروني</h4>
+                            <p>info@darelarkan.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form reveal-right">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="الاسم الكامل" required>
+                        <label for="name">الاسم الكامل</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="البريد الإلكتروني" required>
+                        <label for="email">البريد الإلكتروني</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" placeholder="رقم الهاتف">
+                        <label for="phone">رقم الهاتف</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" placeholder="رسالتك" rows="4" required></textarea>
+                        <label for="message">رسالتك</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <span>إرسال الرسالة</span>
+                        <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,64C960,75,1056,85,1152,80C1248,75,1344,53,1392,42.7L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"/>
+            </svg>
+        </div>
+        
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <span class="letter-d">D</span>
+                    <span class="letter-a">A</span>
+                    <span class="letter-r">R</span>
+                </div>
+                <p>شركة دار الأركان للتطوير العقاري</p>
+                <p>نبني المستقبل بأيدٍ مصرية</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>روابط سريعة</h4>
+                <a href="#about">عن الشركة</a>
+                <a href="#projects">مشاريعنا</a>
+                <a href="#services">خدماتنا</a>
+                <a href="#contact">تواصل معنا</a>
+            </div>
+            
+            <div class="footer-social">
+                <h4>تابعونا</h4>
+                <div class="social-icons">
+                    <a href="#" class="social-icon" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Twitter">
+                        <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2024 Dar El Arkan. جميع الحقوق محفوظة</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
